@@ -49,7 +49,7 @@ export default class ListaController {
     addCnpj(event) {
         // event.preventDefault();
         this.showLoadingInSendButton();
-        let empresa = {nome: this.nameInput.value, cnpj: this.cnpjInput.value};
+        let empresa = {name: this.nameInput.value, cnpj: this.cnpjInput.value};
         this.empresaService.adicionaEmpresa(empresa,
           (id) => {
             this.mostrarToastSucesso();
@@ -86,7 +86,7 @@ export default class ListaController {
         for (let i = 0; i < dados.length; i++) {
           const tr = document.createElement('tr');
           const tdNome = document.createElement('td');
-          tdNome.innerHTML = dados[i].nome;
+          tdNome.innerHTML = dados[i].name;
           const tdCnpj = document.createElement('td');
           const tdAcao = document.createElement('td');
           const btnRemover = document.createElement('button');
@@ -98,7 +98,7 @@ export default class ListaController {
               dados[i].id, 
               () => {//sucess
                 this.mostrarToastEmpresaExcluida();
-                tr.remove()
+                tr.remove();
               },
               () => {
                 

@@ -4,10 +4,10 @@
 // import { ListaController } from "./ListaController";
 
 export class EmpresaService {
-    urlBase = "https://empresas-w894.onrender.com/";
+    // urlBase = "https://empresas-w894.onrender.com/";
+    urlBase = "https://laravel.copyconnect.com.br/api";
+    //urlBase = "http://127.0.0.1:8000/api/";
     dados = [];
-
-    // comeco = new Comeco();
 
     // constructor() {
     //     // this.altura = altura;
@@ -16,16 +16,14 @@ export class EmpresaService {
 
     loadingData(success, fail, completed) {
         // loaingTable.classList.remove('d-none');
-        let url = this.urlBase + 'v1/empresa';
+        let url = this.urlBase + 'company';
         $.ajax({
             url: url,
             dataType: 'json',
             type: "GET",
             contentType: 'application/json',
             success: function (response) {
-                success(response.data);
-                // this.dados = response.data;
-                // Comeco.gerarTabela(this.dados);
+                success(response);
             },
             error: function (jqXHR, textStatus, errorThrown) {},
             complete: () => {
@@ -35,7 +33,7 @@ export class EmpresaService {
     }
     
     excluirEmpresa(id, success, fail, completed) {
-        let url = this.urlBase + "v1/empresa/" + id;
+        let url = this.urlBase + "company/" + id;
         $.ajax({
             url: url,
             dataType: 'json',
@@ -58,8 +56,7 @@ export class EmpresaService {
     };
     
     adicionaEmpresa(empresa, success, fail, completed) {
-        // console.log("adicionaEmpresa");
-        let url = this.urlBase +  'v1/empresa';
+        let url = this.urlBase + 'company';
         
         $.ajax({
             url: url,
