@@ -5,7 +5,9 @@
 
 export class EmpresaService {
     // urlBase = "https://empresas-w894.onrender.com/";
-    urlBase = "https://laravel.copyconnect.com.br/api";
+    // urlBase = "https://laravel.copyconnect.com.br/api";
+    urlBase = "https://cct-back.sindetur-rj.com.br/public/api/";
+    
     //urlBase = "http://127.0.0.1:8000/api/";
     dados = [];
 
